@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test:local": "wdio run ./wdio.conf.js",
-    "test:bs": "wdio run wdio.bs.conf.js"
+    "test:bs": "npx wdio run wdio.bs.conf.js"
   },
   "dependencies": {
     "dotenv": "^17.3.1"
