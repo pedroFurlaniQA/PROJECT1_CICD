@@ -1,5 +1,6 @@
 name: Appium Cucumber WDIO Tests
 
+
 on:
   push:
     branches: [ "main" ]
@@ -39,3 +40,9 @@ jobs:
         with:
           name: allure-report
           path: allure-report
+
+      - name: Deploy Allure report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
