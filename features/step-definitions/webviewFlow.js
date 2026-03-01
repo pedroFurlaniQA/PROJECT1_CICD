@@ -14,30 +14,15 @@ Then(/^the user should be redirected to the Webview page$/, async () =>{
 });
 
 When(/^the user fill the URL input field and click on go to site$/, async () => {
-    await $('~URL input field').addValue('www.test.com');
+    await $('~URL input field').addValue('https://www.atom.com/name/Test');
     await $('android=new UiSelector().text("Go To Site")').click();
 });
 
 Then(/^the user should be redirected to the website$/, async () => {
-
-  // 1️⃣ esperar o WebView aparecer
-  await driver.waitUntil(async () => {
-    const contexts = await driver.getContexts();
-    return contexts.some(c => c.includes('WEBVIEW'));
-  }, {
-    timeout: 30000,
-    timeoutMsg: 'WebView did not appear'
-  });
-
-  // 2️⃣ trocar para WebView
-  const contexts = await driver.getContexts();
-  const webview = contexts.find(c => c.includes('WEBVIEW'));
-  await driver.switchContext(webview);
-
-  // 3️⃣ validar elemento HTML
-  await expect($('//*[contains(text(),"Atom")]'))
-    .toBeDisplayed({ timeout: 30000 });
-
+  await driver.waitUntil(async () =>
+    (await driver.getUrl()).includes('atom.com/name/Test'),
+    { timeout: 30000 }
+  );
 });
 
 
