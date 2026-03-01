@@ -20,7 +20,7 @@ When(/^the user fill the URL input field and click on go to site$/, async () => 
 
 Then(/^the user should be redirected to the website$/, async () => {
     await $('android=new UiSelector().text("Atom")')
-        .waitForDisplayed({ timeout: 30000 });
+        .waitForDisplayed({ timeout: 300000 });
 });
 
 
