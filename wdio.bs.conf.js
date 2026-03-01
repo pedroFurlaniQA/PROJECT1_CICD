@@ -89,7 +89,7 @@ export const config = {
         source: true,
         strict: false,
         tagExpression: '',
-        timeout: 60000,
+        timeout: 120000,
         ignoreUndefinedDefinitions: false
     }
 };
