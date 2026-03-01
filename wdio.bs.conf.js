@@ -21,7 +21,7 @@ export const config = {
     // Specify Test Files
     // ==================
     specs: [
-        './e2e/features/**/*.feature'
+        './features/**/*.feature'
     ],
 
     exclude: [],
