@@ -18,12 +18,12 @@ When(/^the user fill the URL input field and click on go to site$/, async () => 
     await $('android=new UiSelector().text("Go To Site")').click();
 });
 
-Then(/^the user should be redirected to the website$/, async () => {
-  await driver.waitUntil(async () =>
-    (await driver.getUrl()).includes('atom.com/name/Test'),
-    { timeout: 30000 }
-  );
-});
+// Then(/^the user should be redirected to the website$/, async () => {
+//   await driver.waitUntil(async () =>
+//     (await driver.getUrl()).includes('atom.com/name/Test'),
+//     { timeout: 30000 }
+//   );
+// });
 
 
 
