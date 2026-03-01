@@ -19,8 +19,8 @@ When(/^the user fill the URL input field and click on go to site$/, async () => 
 });
 
 Then(/^the user should be redirected to the website$/, async () => {
-    await $('android=new UiSelector().text("Atom")')
-        .waitForDisplayed({ timeout: 15000 });
+    await expect($('android=new UiSelector().text("Atom")')).toBeDisplayed();
+        
 });
 
 
